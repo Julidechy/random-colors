@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Generador de Colores Aleatorios</title>
+
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+        <!--Opengraph-->
+        <meta property="og:url"           content="https://generador-colores-aleatorios.netlify.app/" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="Generador de Paleta de Colores Aleatorio" />
+        <meta property="og:description"   content="Genera paletas, guarda las que más te gusten, copia al portapapeles y bloquea los colores que quieres que se mantengan." />
+        <meta property="og:image"         content="opengraph-img.png" />
+
+    </head>
+    <body class="antialiased bg-gray-100 md:h-screen md:flex md:flex-col md:justify-between">
+        <h1 class="text-4xl text-gray-900 mt-10 mb-4 text-center">Generador de Colores Aleatorios</h1>
+        <div class="colors flex flex-col md:flex-row text-gray-600">
+            <div class="color bg-gray-500 py-6 flex flex-col flex-1 items-center justify-center relative overflow-hidden">
+                <h2 class="text-2xl cursor-pointer mb-10">Hex</h2>
+                <div class="controls text-gray-800 flex flex-col mb-20">
+                    <button class="adjust"><i class="fas fa-sliders-h"></i></button>
+                    <button class="lock mt-2"><i class="fas fa-lock-open"></i></button>
+                </div>
+                <div class="sliders flex flex-col absolute bottom-0 my-2 md:mb-4 bg-white p-4 w-4/5 rounded-xl transform transition-all duration-500 ease-in-out">
+                    <button class="close-adjustment absolute top-0 right-0 p-1">
+                        <svg class="h-6 w-6 fill-current text-blue-900" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-m</title><path d="M289.94,256l95-95A24,24,0,0,0,351,127l-95,95-95-95A24,24,0,0,0,127,161l95,95-95,95A24,24,0,1,0,161,385l95-95,95,95A24,24,0,0,0,385,351Z"/></svg>
+                    </button>
+                    <span>Tono</span>
+                    <input type="range" min="0" max="360" step="1" name="hue" class="hue-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-hue="0">
+                    <span>Brillo</span>
+                    <input type="range" min="0" max="1" step="0.01" name="brightness" class="bright-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-bright="0">
+                    <span>Saturación</span>
+                    <input type="range" min="0" max="1" step="0.01" name="saturation" class="sat-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-sat="0">
+                </div>
+            </div>
+            <div class="color bg-gray-500 py-6 flex flex-col flex-1 items-center justify-center relative overflow-hidden">
+                <h2 class="text-2xl cursor-pointer mb-10">Hex</h2>
+                <div class="controls text-gray-800 flex flex-col mb-20">
+                    <button class="adjust"><i class="fas fa-sliders-h"></i></button>
+                    <button class="lock mt-2"><i class="fas fa-lock-open"></i></button>
+                </div>
+                <div class="sliders flex flex-col absolute bottom-0 my-2 md:mb-4 bg-white p-4 w-4/5 rounded-xl transform transition-all duration-500 ease-in-out">
+                    <button class="close-adjustment absolute top-0 right-0 p-1">
+                        <svg class="h-6 w-6 fill-current text-blue-900" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-m</title><path d="M289.94,256l95-95A24,24,0,0,0,351,127l-95,95-95-95A24,24,0,0,0,127,161l95,95-95,95A24,24,0,1,0,161,385l95-95,95,95A24,24,0,0,0,385,351Z"/></svg>
+                    </button>
+                    <span>Tono</span>
+                    <input type="range" min="0" max="360" step="1" name="hue" class="hue-input my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-hue="1">
+                    <span>Brillo</span>
+                    <input type="range" min="0" max="1" step="0.01" name="brightness" class="bright-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-bright="1">
+                    <span>Saturación</span>
+                    <input type="range" min="0" max="1" step="0.01" name="saturation" class="sat-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-sat="1">
+                </div>
+            </div>
+            <div class="color bg-gray-500 py-6 flex flex-col flex-1 items-center justify-center relative overflow-hidden">
+                <h2 class="text-2xl cursor-pointer mb-10">Hex</h2>
+                <div class="controls text-gray-800 flex flex-col mb-20">
+                    <button class="adjust"><i class="fas fa-sliders-h"></i></button>
+                    <button class="lock mt-2"><i class="fas fa-lock-open"></i></button>
+                </div>
+                <div class="sliders flex flex-col absolute bottom-0 my-2 md:mb-4 bg-white p-4 w-4/5 rounded-xl transform transition-all duration-500 ease-in-out">
+                    <button class="close-adjustment absolute top-0 right-0 p-1">
+                        <svg class="h-6 w-6 fill-current text-blue-900" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-m</title><path d="M289.94,256l95-95A24,24,0,0,0,351,127l-95,95-95-95A24,24,0,0,0,127,161l95,95-95,95A24,24,0,1,0,161,385l95-95,95,95A24,24,0,0,0,385,351Z"/></svg>
+                    </button>
+                    <span>Tono</span>
+                    <input type="range" min="0" max="360" step="1" name="hue" class="hue-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-hue="2">
+                    <span>Brillo</span>
+                    <input type="range" min="0" max="1" step="0.01" name="brightness" class="bright-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-bright="2">
+                    <span>Saturación</span>
+                    <input type="range" min="0" max="1" step="0.01" name="saturation" class="sat-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-sat="2">
+                </div>
+            </div>
+            <div class="color bg-gray-500 py-6 flex flex-col flex-1 items-center justify-center relative overflow-hidden">
+                <h2 class="text-2xl cursor-pointer mb-10">Hex</h2>
+                <div class="controls text-gray-800 flex flex-col mb-20">
+                    <button class="adjust"><i class="fas fa-sliders-h"></i></button>
+                    <button class="lock mt-2"><i class="fas fa-lock-open"></i></button>
+                </div>
+                <div class="sliders flex flex-col absolute bottom-0 my-2 md:mb-4 bg-white p-4 w-4/5 rounded-xl transform transition-all duration-500 ease-in-out">
+                    <button class="close-adjustment absolute top-0 right-0 p-1">
+                        <svg class="h-6 w-6 fill-current text-blue-900" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-m</title><path d="M289.94,256l95-95A24,24,0,0,0,351,127l-95,95-95-95A24,24,0,0,0,127,161l95,95-95,95A24,24,0,1,0,161,385l95-95,95,95A24,24,0,0,0,385,351Z"/></svg>
+                    </button>
+                    <span>Tono</span>
+                    <input type="range" min="0" max="360" step="1" name="hue" class="hue-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-hue="3">
+                    <span>Brillo</span>
+                    <input type="range" min="0" max="1" step="0.01" name="brightness" class="bright-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-bright="3">
+                    <span>Saturación</span>
+                    <input type="range" min="0" max="1" step="0.01" name="saturation" class="sat-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-sat="3">
+                </div>
+            </div>
+            <div class="color bg-gray-500 py-6 flex flex-col flex-1 items-center justify-center relative overflow-hidden">
+                <h2 class="text-2xl cursor-pointer mb-10">Hex</h2>
+                <div class="controls text-gray-800 flex flex-col mb-20">
+                    <button class="adjust"><i class="fas fa-sliders-h"></i></button>
+                    <button class="lock mt-2"><i class="fas fa-lock-open"></i></button>
+                </div>
+                <div class="sliders flex flex-col absolute bottom-0 my-2 md:mb-4 bg-white p-4 w-4/5 rounded-xl transform transition-all duration-500 ease-in-out">
+                    <button class="close-adjustment absolute top-0 right-0 p-1">
+                        <svg class="h-6 w-6 fill-current text-blue-900" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-m</title><path d="M289.94,256l95-95A24,24,0,0,0,351,127l-95,95-95-95A24,24,0,0,0,127,161l95,95-95,95A24,24,0,1,0,161,385l95-95,95,95A24,24,0,0,0,385,351Z"/></svg>
+                    </button>
+                    <span>Tono</span>
+                    <input type="range" min="0" max="360" step="1" name="hue" class="hue-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-hue="4">
+                    <span>Brillo</span>
+                    <input type="range" min="0" max="1" step="0.01" name="brightness" class="bright-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-bright="4">
+                    <span>Saturación</span>
+                    <input type="range" min="0" max="1" step="0.01" name="saturation" class="sat-inputt my-1 md:my-4 w-full relative rounded-full cursor-pointer appearance-none" data-sat="4">
+                </div>
+            </div>
+        </div>
+        <div class="panel h-32 w-full max-w-screen-lg mx-auto flex items-center justify-around">
+            <div class="library-panel flex flex-col justify-center items-center">
+                <button class="library text-xl text-white hover:bg-blue-800 m-1 p-2 mx-auto w-full bg-blue-900 rounded-lg shadow-lg cursor-pointer">
+                    <i class="fas fa-book-open"></i>
+                </button>
+                <p class="text-lg text-center">Biblioteca</p>
+            </div>
+            <div class="generate-panel flex flex-col justify-center items-center">
+                <button class="generate text-xl text-white hover:bg-blue-800 m-1 p-2 mx-auto w-full bg-blue-900 rounded-lg shadow-lg cursor-pointer">
+                    <i class="fas fa-sync"></i>
+                </button>
+                <p class="text-lg text-center">Generar</p>
+            </div>
+            <div class="save-panel flex flex-col justify-center items-center">
+                <button class="save text-xl text-white hover:bg-blue-800 m-1 p-2 mx-auto w-full bg-blue-900 rounded-lg shadow-lg cursor-pointer">
+                    <i class="fas fa-save"></i>
+                </button>
+                <p class="text-lg text-center">Guardar</p>
+            </div>
+        </div>
+
+        <!--Modals-->
+        <div class="copy-container fixed top-0 left-0 bg-black bg-opacity-40 w-full h-full flex items-center justify-center">
+            <div class="copy-popup p-8 bg-white flex flex-col justify-around items-center rounded-lg">
+                <h3 class="text-2xl">Copiado al portapapeles</h3>
+                <svg class="w-12 h-12" id="Raw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255.99316 255.99316">
+                    <rect width="256" height="256" fill="none"/>
+                    <polygon points="168 87.993 168 167.993 216 167.993 216 39.993 88 39.993 88 87.993 168 87.993" opacity="0.2"/>
+                    <polyline points="168 167.993 216 167.993 216 39.993 88 39.993 88 87.993" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                    <rect x="39.99902" y="87.99414" width="128" height="128" stroke-width="16" stroke="#000" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+            </div>
+        </div>
+        <div class="save-container fixed top-0 left-0 bg-black bg-opacity-40 w-full h-full flex items-center justify-center">
+            <div class="save-popup p-8 bg-white flex flex-col justify-around items-center rounded-lg h-auto">
+                <button class="close-save absolute top-0 right-0 p-1">
+                    <svg class="h-6 w-6 fill-current text-blue-900" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-m</title><path d="M289.94,256l95-95A24,24,0,0,0,351,127l-95,95-95-95A24,24,0,0,0,127,161l95,95-95,95A24,24,0,1,0,161,385l95-95,95,95A24,24,0,0,0,385,351Z"/></svg>
+                </button>
+                <h4 class="text-xl text-center">Dale un nombre a tu paleta de colores</h4>
+                <input type="text" max-length="35" class="save-name p-2 m-6 border border-indigo-500 rounded-md focus:outline-none focus:ring-blue-300" maxlength="25" placeholder="Nombre">
+                <button class="submit-save py-2 px-4 bg-indigo-700 text-white rounded-md hover:bg-indigo-800 transition duration-300 ease" type="submit">Guardar</button>
+            </div>
+        </div>
+        <div class="library-container fixed top-0 left-0 bg-black bg-opacity-40 w-full h-full flex items-center justify-center">
+            <div class="library-popup relative p-3 md:p-8 bg-white flex flex-col justify-start rounded-lg overflow-y-scroll">
+                <div class="flex justify-between relative m-4">
+                    <button class="reset-library p-2 text-xs bg-blue-800 text-white font-semibold rounded-md">
+                        Resetear
+                    </button>
+                    <button class="close-library">
+                        <svg class="h-6 w-6 fill-current text-blue-900" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-m</title><path d="M289.94,256l95-95A24,24,0,0,0,351,127l-95,95-95-95A24,24,0,0,0,127,161l95,95-95,95A24,24,0,1,0,161,385l95-95,95,95A24,24,0,0,0,385,351Z"/></svg>
+                    </button>
+                </div>
+                <h4 class="library-title text-2xl text-center pb-10">La biblioteca está vacía</h4>
+            </div>
+        </div>
+        <footer class="bg-footer w-full h-12 p-4">
+            <p class="text-footer text-center text-xs">Desarrollado por Julieta De Simone Shecre</p>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js" integrity="sha512-UwcC/iaz5ziHX7V6LjSKaXgCuRRqbTp1QHpbOJ4l1nw2/boCfZ2KlFIqBUA/uRVF0onbREnY9do8rM/uT/ilqw==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js" integrity="sha512-yocoLferfPbcwpCMr8v/B0AB4SWpJlouBwgE0D3ZHaiP1nuu5djZclFEIj9znuqghaZ3tdCMRrreLoM8km+jIQ==" crossorigin="anonymous"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>

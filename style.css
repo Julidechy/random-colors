@@ -1,0 +1,68 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+path, i, svg {
+    pointer-events:none;
+}
+
+.colors {
+    min-height: 60vh;
+}
+.color{
+    height: 60vh;
+}
+
+.sliders{
+    opacity:0;
+    transform: tranlsateY(100px);
+    pointer-events: none;
+}
+
+.sliders.active{
+    opacity: 1;
+    transform: translateY(0px);
+    pointer-events: all;
+}
+
+.copy-container, .save-container, .library-container{
+    opacity:0;
+    pointer-events: none;
+    transition: all 1s ease-in-out;
+}
+
+.copy-popup, .save-popup, library-popup{
+    transition: transform 1.5s ease;
+    transform: translateY(-2rem);
+}
+
+.copy-container.active, .save-container.active, .library-container.active{
+    opacity:1;
+    pointer-events: all
+}
+
+.copy-popup.active, .save-popup.active, .library-popup.active {
+    transform: translateY(0);
+}
+
+.copy-popup {
+    width: 350px;
+    height: 250px;
+}
+
+@media (max-width: 1023px){
+    .library-popup{
+        min-width:350px;
+        min-height: 400px;
+        max-height: 50vh;
+    }
+}
+
+
+@media (min-width: 1024px){
+    .library-popup{
+        min-width:500px;
+        min-height: 400px;
+        max-height: 50vh;
+    }
+}
